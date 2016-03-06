@@ -1,10 +1,10 @@
 \documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
 \usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ...
 %\geometry{landscape}                		% Activate for for rotated page geometry
 %\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
+								% TeX will automatically convert eps --> pdf in pdflatex
 \usepackage{amssymb}
 \usepackage{amsmath}
 
@@ -20,15 +20,15 @@
 \begin{titlepage}
 		\begin{center}
 			\includegraphics[scale=0.2]{logo}\\[1cm]
-			
+
 			\textsc{\LARGE MAT 485 Project 2}\\[2cm]
 			\textsc{\Large Cal Poly Pomona}\\[1cm]
-			
-		
+
+
 			\HRule \\[0.4cm]
-			{\huge \bfseries A Two-Mass Oscillator \\[0.4cm]}
+			{\huge \bfseries A Birth-Death Process \\[0.4cm]}
 			\HRule \\[2cm]
-			
+
 			\noindent
 			\begin{minipage}{0.4\textwidth}
 				\begin{flushleft}
@@ -44,9 +44,9 @@
 					Dr. Jennifer Switkes
 			\end{flushright}
 			\end{minipage}
-			
+
 			\vfill
-			
+
 			{\large March $7^{\text{th}}$, 2016}
 		\end{center}
 	\end{titlepage}
@@ -56,4 +56,53 @@
 
 \section{Introduction}
 
-\end{document}  
+In this project we will study two different birth-death models, a deterministic model:
+
+$$\frac{dN}{dt} = (\lambda -\mu)N, \ N(0)=N_0, \ \lambda > 0, \ \mu > 0$$
+
+and a stochastic model:
+
+$$\frac{dP_n}{dt} = \mu (n+1)P_{n+1}+\lambda (n-1)P_{n-1}-(\lambda+\mu)nP_n, \ n>0$$
+
+Here $\lambda$ is a birth rate, $\mu$ is a death rate, and $P_n$ is the probability that the population is size $n$ at time $t$.
+
+\section{Deterministic Model}
+
+In this section we will analyze the equation:
+
+$$\frac{dN}{dt} = (\lambda -\mu)N, \ N(0)=N_0, \ \lambda > 0, \ \mu > 0$$
+
+First if we solve this equation for the population size $N(t)$ we arrive at the following:
+
+$$N(t) = N_0 e^{(\lambda-\mu)t}$$
+
+We now will consider a case where $\lambda > \mu$, which should give us an exponential growth in our population because people are giving birth faster than people are dying.
+We can confirm that via the plot below:
+
+%\begin{center}
+	%\includegraphics[]{} add later
+%\end{center}
+
+If we instead consider a case where $\mu > \lambda$ then we will see an exponential decay in our population because people are dying faster than people are giving birth.
+Again we can confirm this with the following plot:
+
+%\begin{center}
+	%\includegraphics[]{} add later
+%\end{center}
+
+Now, if $\lambda = \mu$ then we will see that that the population will remain constant because people are being introduced into the population and being removed from the population at the same rate.
+We see this in the plot below:
+
+%\begin{center}
+	%\includegraphics[]{} add later
+%\end{center}
+
+\section{Stochastic Model}
+
+In this section we will explore the following equation:
+
+$$\frac{dP_n}{dt} = \mu (n+1)P_{n+1}+\lambda (n-1)P_{n-1}-(\lambda+\mu)nP_n, \ n>0$$
+
+We will analyze the expected value, $E[N(t)]$, and the variance, $V[N(t)]$, of this model in order to learn more about its behavior.
+
+\end{document}
