@@ -104,5 +104,29 @@ In this section we will explore the following equation:
 $$\frac{dP_n}{dt} = \mu (n+1)P_{n+1}+\lambda (n-1)P_{n-1}-(\lambda+\mu)nP_n, \ n>0$$
 
 We will analyze the expected value, $E[N(t)]$, and the variance, $V[N(t)]$, of this model in order to learn more about its behavior.
+In general we can described the expected value as
 
+$$E[N(t)] = \sum_{n=0}^\infty n P_n$$
+
+If we go through some symbol pushing and algebra we can see that for this model the expected value is the following:
+
+ $$E[N(t)] = N_0 e^{(\lambda-\mu)t}$$
+
+ This is just our continuous model solution, which should not be too surprising.
+ Next we need to find the variance for this model.
+ We can do this by starting with the general equation of the variance.
+
+ $$V[N(t)] = E[N(t)^2]-E[N(t)]^2$$
+
+ By doing some more symbol pushing and algebra we can then see that the variance for this model is the following:
+
+ $$V[N(t)] = N_0\left(e^{2(\lambda-\mu)t} - e^{(\lambda-\mu)t}\right)$$
+
+ Below we will see graphically what these expressions tell us about the model.
+
+ %\begin{center}
+ 	%\includegraphics[]{} add later
+ %\end{center}
+
+ \section{Simulations}
 \end{document}
